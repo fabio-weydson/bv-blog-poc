@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./src",
+      "target": "ES5",
+      "module": "ESNext" ,
+      "moduleResolution": "node" ,
+      "lib": [
+        "DOM",
+        "ESNext"
+      ],
+      "jsx": "react",
+      "noEmit": true ,
+      "isolatedModules": true,
+      "esModuleInterop": true,
+      "strict": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true, 
+      "resolveJsonModule": true,
+      "allowJs": true,
+      "checkJs": true,
+      "noImplicitAny": false
+    },
+    "include": ["src/**/*", "spec/__tests__", "spec/sidebar.spec.js"],
+    "exclude": ["node_modules", "build"] // *** no type check ***
+  }
