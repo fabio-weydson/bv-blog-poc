@@ -1,38 +1,23 @@
 import React, { useState, useEffect }  from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import { withAxios } from 'react-axios'
 
 import './styles/styles.css';
 import BlogFeed from './components/blog/blog-feed';
 import Sidebar from './components/sidebar/sidebar';
 
+const App = () => { 
 
-let source = axios.CancelToken.source();
+    const[ users, setUsers] = useState(false)
+    const[ isLoaded, setIsLoaded] = useState(false)
 
-const App = withAxios(class AppRaw extends React.Component<{}, { users: any, isLoading: boolean }> { 
-    constructor(props) {
-        super(props);
-        this.state = {
-            users: [],
-            isLoading: true
-        };
-    }
-
-    componentDidMount() {
-        this.setState({ isLoading: true });
+    useEffect(() => {
         axios('https://jsonplaceholder.typicode.com/users').then(result => {
-            this.setState({users:result.data, isLoading:false})
+            setUsers(result.data);
+            setIsLoaded(true)
         })
-    }
+    },[])
 
-    componentWillUnmount() {
-        if (source) source.cancel();
-    }
-
-
-    render() {
-        const {users,isLoading} = this.state;
         return (<div className="bg-gray-50 h-full">
                     <nav className="px-6 py-4 bg-white shadow mb-20">
                         <div className="container flex flex-col mx-auto md:flex-row md:items-center md:justify-between">
@@ -56,12 +41,11 @@ const App = withAxios(class AppRaw extends React.Component<{}, { users: any, isL
                         </div>
                     </nav>
                         <div className="container max-w-screen-lg flex justify-center mx-auto">
-                            <BlogFeed users={users} isLoading={isLoading}/>
-                            <Sidebar users={users} isLoading={isLoading}/>
+                            <BlogFeed users={users} isLoaded={isLoaded}/>
+                            <Sidebar users={users} isLoaded={isLoaded}/>
                         </div>
                 </div>
         )
-    }
-})
+}
 
 ReactDOM.render(<App />, document.getElementById("root"));

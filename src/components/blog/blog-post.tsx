@@ -2,6 +2,7 @@ import React from 'react';
 import LazyLoad from 'react-lazyload';
 
 function BlogPost(props:any) {
+    
         return  (<div className='w-full mb-4 bg-white shadow-md rounded-lg overflow-hidden mx-auto'>
                     <div className="flex flex-row mt-2 px-2 py-3 mx-3">
                         <div className="w-auto h-auto rounded-full border-2 border-pink-500">
@@ -21,7 +22,7 @@ function BlogPost(props:any) {
                     </div>
                     <div className="border-b border-gray-100"></div> 
                     <div className='mb-7 mt-6 mx-3 bg-gray-90 h-96 rounded bg-gray-100 overflow-hidden'>
-                        <LazyLoad height="100%" scrollContainer>
+                        <LazyLoad height="100%">
                             <img className="rounded max-w-screen-xl w-full " src={"https://picsum.photos/536/?random="+props.post.id}/>
                         </LazyLoad>
                     </div>
