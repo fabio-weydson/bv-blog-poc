@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SidebarSkeleton = (props) => {  
+const SidebarSkeleton = () => {  
   return <div className="flex flex-col max-w-sm px-6 py-4 mx-auto bg-white rounded-lg shadow-md animate-pulse">
           <ul className="-mx-4">
               <li className="flex items-center mb-2">

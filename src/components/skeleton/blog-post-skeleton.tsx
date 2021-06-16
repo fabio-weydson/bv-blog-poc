@@ -1,6 +1,6 @@
 import React from 'react';
 
-function BlogPostSkeleton(props) {
+function BlogPostSkeleton() {
         return  (<div className='w-full mb-4 bg-white shadow-md rounded-lg overflow-hidden mx-auto animate-pulse'>
                     <div className="flex flex-row mt-2 px-2 py-3 mx-3">
                         <div className="w-12 h-12 rounded-full bg-gray-200">

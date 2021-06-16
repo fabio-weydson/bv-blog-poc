@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react'
-import Sidebar from "../../src/components/sidebar/sidebar";
+import Sidebar from '../../src/components/sidebar/sidebar';
 
 describe("Sidebar", function() {
     
@@ -9,7 +9,7 @@ describe("Sidebar", function() {
   });
 
   it("should be loaded", () => {
-    const { findAllByText } = render(<Sidebar/>)
+    const { findAllByText } = render(<Sidebar isLoaded={true} users={{}}/>)
     const authorsTitle = findAllByText(/autores/i)
     expect(authorsTitle).toBeTruthy();
   });

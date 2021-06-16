@@ -16,8 +16,8 @@ class Sidebar extends React.Component<SidebarProps, SidebarState> {
         });
    }
 
-   componentDidUpdate(prevProps,nextProps) {
-        if(this.props.isLoaded != prevProps.isLoaded) {
+   componentDidUpdate(nextProps) {
+        if(this.props.isLoaded != nextProps.isLoaded) {
             this.setState({
                 users:this.props.users,
                 isLoaded:this.props.isLoaded
@@ -39,10 +39,10 @@ class Sidebar extends React.Component<SidebarProps, SidebarState> {
                                 <ul className="-mx-4">
                                     {(users?.map((user,key) => 
                                     <li className="flex items-center mb-2" key={key}><img
-                                            src={"http://lorempixel.com/80/80/people/"+user?.id}
+                                            src={user?.picture?user?.picture:"http://lorempixel.com/80/80/people/"+user?.id}
                                             alt="avatar" className="object-cover w-10 h-10 mx-4 rounded-full"/>
                                         <p>
-                                            <a href="#" className="mx-1 font-bold text-gray-700 hover:underline">{user?.name}</a><br/>
+                                            <a href="/" className="mx-1 font-bold text-gray-700 hover:underline">{user?.name}</a><br/>
                                             {/* <span className="text-sm font-light text-gray-700">0 artigos</span> */}
                                         </p>
                                     </li>
