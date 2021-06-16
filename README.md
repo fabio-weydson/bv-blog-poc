@@ -30,9 +30,9 @@ Aplicação desenvolvida em ReactJS como prova de conceito para uma vaga da Four
 **3 - Para servidor o projeto localmente**
 ``npm start``
 
-**Acesse utilizando o endereço:** http://localhost:3000
+> Acesse utilizando o endereço:** http://localhost:3000
 
-**3 - O testes unitários podem ser executados a partir do seguinte comando**
+**4 - O testes unitários podem ser executados a partir do seguinte comando**
 ``npm run test``
 
 ## Deploy com Docker
