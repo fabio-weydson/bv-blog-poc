@@ -23,7 +23,9 @@ Aplicação desenvolvida em ReactJS como prova de conceito para uma vaga da Four
 ## Stack utilizada
 
 > **Front:** ReactJS / Axios / React-toast-notifications
+
 > **Testes:** Jasmine / React-Testing-Library
+
 > **Deploy:** Docker / Heroku Containers
 
 ## Instruções de instalação em ambiente de desenvolvimento
