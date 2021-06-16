@@ -7,12 +7,17 @@ Aplicação desenvolvida em ReactJS como prova de conceito para uma vaga da Four
 # Desafio
 
 **Construir um blog onde**:
-1 – Deve ser feita a integração com a API [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/)
-2 – Deve ter listagem dos tópicos, simulação da criação, alteração e edição, sempre utilizando os respectivos endpoints fornecidos pela API.
-3 – O uso de Hooks deve ser o padrão.
-4 – O uso de Docker é esperado.
-5 – O uso de TDD com uma cobertura de pelo menos 70% do código é esperado.
-6 – Ter no repositório o desenho da solução, como utilizar e evoluir o código.
+>1 – Deve ser feita a integração com a API [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/)
+
+>2 – Deve ter listagem dos tópicos, simulação da criação, alteração e edição, sempre utilizando os respectivos endpoints fornecidos pela API.
+
+>3 – O uso de Hooks deve ser o padrão.
+
+>4 – O uso de Docker é esperado.
+
+>5 – O uso de TDD com uma cobertura de pelo menos 70% do código é esperado.
+
+>6 – Ter no repositório o desenho da solução, como utilizar e evoluir o código.
 
 ## Instruções de instalação em ambiente de desenvolvimento
 
