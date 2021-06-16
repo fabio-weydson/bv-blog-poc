@@ -4,27 +4,23 @@ import axios from 'axios';
 import BlogPost from './blog-post';
 import BlogPostSkeleton from '../skeleton/blog-post-skeleton';
 import BlogPostPublish from './blog-post-publish';
+import GlobalService from '../../services/global.service';
 
 
-type MyProps = { users, isLoaded, addToast};
+type MyProps = { users, isLoaded};
 type MyState = { isLoaded:boolean, posts:any, newPost:any };
 
 class BlogFeed extends React.Component<MyProps, MyState> {
 
     constructor(props) {
         super(props)
-        this.state ={ posts:{}, isLoaded:false, newPost:'' }
+        this.state ={ posts:[], isLoaded:false, newPost:'' }
     }
 
-    private emitToast(message):void {
-        const {addToast} = this.props;
-        addToast(message, {  appearance: 'success', autoDismiss: true,  placement:'bottom-right'})
-        return;
-    }
 
     componentDidMount(){
          this.setState({
-            posts:'',
+            posts:[],
             isLoaded:this.props.isLoaded
          });
     }  
@@ -50,8 +46,8 @@ class BlogFeed extends React.Component<MyProps, MyState> {
         axios.post('https://jsonplaceholder.typicode.com/posts', post)
             .then((response) => {
 
-                this.setState({ ...this.state, isLoaded:true})  
-                this.emitToast("Seu artigo foi publicado") 
+                this.setState(prevState=>({ isLoaded:true, posts: [post, ...prevState.posts] }))  
+                GlobalService.emitToast("Seu artigo foi publicado","success") 
                 return response.data;
 
         }).catch(function (e) { console.log(e)  /* Tratamento de erro */  })
@@ -83,7 +79,7 @@ class BlogFeed extends React.Component<MyProps, MyState> {
                             <BlogPostSkeleton/>
                         }
                         {(this.state.isLoaded) && 
-                        this.state.posts.map((post,key) => <BlogPost user={this.props.users[post.userId-1]} editPost={this.editPost} key={key} post={post} />)}
+                        this.state.posts.map((post,key) => <BlogPost user={this.props.users.find((user)=> post.userId==user.id)} editPost={this.editPost} key={key} post={post} />)}
                        
                     </div>
             </div>)

@@ -6,7 +6,7 @@ import BlogFeed from '../../src/components/blog/blog-feed';
 describe("BlogFeed", function() {
     
   it("should exists", function() {
-      render(<BlogFeed users={{}} isLoaded={false} addToast={{}} />);
+      render(<BlogFeed users={{}} isLoaded={false} />);
       expect(BlogFeed).toBeTruthy();
   });
 
@@ -22,7 +22,7 @@ describe("BlogFeed", function() {
       "website": "",
       "company": {"name": "Foursys"}
     }];
-    render(<BlogFeed users={users} isLoaded={true} addToast={{}} />);
+    render(<BlogFeed users={users} isLoaded={true}/>);
     expect(BlogFeed).toBeTruthy();
   });
 

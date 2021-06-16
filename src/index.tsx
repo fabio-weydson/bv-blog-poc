@@ -1,7 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import { useToasts, ToastProvider } from 'react-toast-notifications'
 
 
 import './styles/styles.css';
@@ -11,8 +10,6 @@ import GlobalService from './services/global.service';
 
 
 const App = () => { 
-
-    const toasts = useToasts()
     
     const[ users, setUsers] = useState(false)
     const[ isLoaded, setIsLoaded] = useState(false)
@@ -21,7 +18,6 @@ const App = () => {
         /* Dummy Login */
         const LoggedUser = GlobalService.setLoggedUser()
         axios('https://jsonplaceholder.typicode.com/users').then(result => {
-            console.log(LoggedUser);
             setUsers(result.data.concat(LoggedUser).reverse());
             setIsLoaded(true)
         })
@@ -50,10 +46,10 @@ const App = () => {
                         </div>
                     </nav>
                         <div className="container max-w-screen-lg flex justify-center mx-auto">
-                            <BlogFeed users={users} isLoaded={isLoaded} {...toasts}/>
+                            <BlogFeed users={users} isLoaded={isLoaded} />
                             <Sidebar users={users} isLoaded={isLoaded}/>
                         </div>
                 </div>
         )
 }
-ReactDOM.render(<ToastProvider><App /></ToastProvider>, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

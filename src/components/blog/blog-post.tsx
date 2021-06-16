@@ -26,7 +26,7 @@ function BlogPost(props) {
                             <img alt="Post" className="rounded max-w-screen-xl w-full " src={"https://picsum.photos/536/?random="+props.post.id}/>
                         </LazyLoad>
                     </div>
-                    <div className='text-gray-600 font-semibold text-lg mb-2 mx-3 px-2 uppercase'>{props.post.title}</div>
+                    <div title="{props.post.title}" className='text-gray-600 font-semibold text-lg mb-2 mx-3 px-2 uppercase'>{props.post.title}</div>
                     <div className='text-gray-500 font-thin text-sm mb-6 mx-3 px-2'>{props.post.body}</div>
                     
                     <div className="flex w-full border-t border-gray-100">
