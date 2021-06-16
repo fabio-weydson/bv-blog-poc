@@ -22,7 +22,7 @@ Aplicação desenvolvida em ReactJS como prova de conceito para uma vaga da Four
 
 ## Stack utilizada
 
-> **Front:** ReactJS / Axios / React-toast-notifications
+> **Front:** ReactJS / Tailwind CSS / Axios / React-toast-notifications
 
 > **Testes:** Jasmine / React-Testing-Library
 
