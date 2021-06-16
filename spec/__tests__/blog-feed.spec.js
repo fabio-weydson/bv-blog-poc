@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, fireEvent, waitFor, screen } from '@testing-library/react'
-import { AddToast,ToastProvider } from 'react-toast-notifications';
 import BlogFeed from '../../src/components/blog/blog-feed';
 
 describe("BlogFeed", function() {

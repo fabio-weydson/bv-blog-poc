@@ -40,10 +40,11 @@ class BlogFeed extends React.Component<MyProps, MyState> {
         return;
     }
     
-    postPublish = (post) => {   
+    postPublish = (post):object => {   
+
         this.setState({...this.state,isLoaded:false})    
 
-        axios.post('https://jsonplaceholder.typicode.com/posts', post)
+        return axios.post('https://jsonplaceholder.typicode.com/posts', post)
             .then((response) => {
 
                 this.setState(prevState=>({ isLoaded:true, posts: [post, ...prevState.posts] }))  
