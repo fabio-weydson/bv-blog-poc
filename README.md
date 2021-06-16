@@ -1,3 +1,4 @@
+
 # BV Blog - POC
 
 Aplicação desenvolvida em ReactJS como prova de conceito para uma vaga da Foursys.
@@ -18,6 +19,12 @@ Aplicação desenvolvida em ReactJS como prova de conceito para uma vaga da Four
 >5 – O uso de TDD com uma cobertura de pelo menos 70% do código é esperado.
 
 >6 – Ter no repositório o desenho da solução, como utilizar e evoluir o código.
+
+## Stack utilizada
+
+> **Front:** ReactJS / Axios / React-toast-notifications
+> **Testes:** Jasmine / React-Testing-Library
+> **Deploy:** Docker / Heroku Containers
 
 ## Instruções de instalação em ambiente de desenvolvimento
 
